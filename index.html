@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="pt-BR"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Ficha Tormenta20</title>
+<style>
+:root{--bg:#0f0c0b;--pn:#1a1514;--ln:#5c2b29;--tx:#eadfd6;--mu:#a99890;--ac:#e0584e;--in:#f1e8e1;--it:#120e0d;--wr:#e0a85f}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--tx);font:14px/1.4 "Segoe UI",system-ui,sans-serif;display:flex;flex-direction:column;height:100vh}
+header{display:flex;align-items:center;gap:12px;padding:10px 14px;border-bottom:1px solid var(--ln);flex-wrap:wrap}
+h1{font-size:17px;margin:0;letter-spacing:.14em;text-transform:uppercase;color:var(--ac);font-weight:700}
+#who{font-size:15px}#st{font-size:11px;color:var(--mu)}
+#chips{margin-left:auto;display:flex;gap:12px;font-size:12px;color:var(--mu)}#chips b{color:var(--ac)}
+#close{background:none;border:1px solid var(--ln);color:var(--tx);border-radius:6px;cursor:pointer;padding:3px 9px}
+nav{display:flex;gap:4px;padding:8px 14px 0;border-bottom:1px solid var(--ln);overflow-x:auto}
+nav button{background:none;border:1px solid transparent;border-bottom:0;color:var(--mu);padding:7px 13px;cursor:pointer;font:inherit;letter-spacing:.06em;text-transform:uppercase;font-size:12px;border-radius:8px 8px 0 0;white-space:nowrap}
+nav button.on{color:var(--ac);border-color:var(--ln);background:var(--pn)}
+main{flex:1;overflow:auto;padding:14px}
+.tab{display:none}.tab.on{display:block}
+.grid2,.grid3{display:grid;gap:12px;margin-bottom:12px}
+.grid2{grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
+.grid3{grid-template-columns:repeat(auto-fit,minmax(150px,1fr))}
+.w2{grid-column:span 2}
+.card{background:var(--pn);border:1px solid var(--ln);border-radius:10px;padding:12px 14px;margin-bottom:12px;min-width:0}
+.grid2>.card{margin-bottom:0}
+.card h3{margin:0 0 10px;font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--ac);font-weight:700}
+.f{display:block;margin-bottom:8px;min-width:0}
+.f>span{display:block;font-size:11px;color:var(--mu);letter-spacing:.08em;text-transform:uppercase;margin-bottom:3px}
+.f>span:empty{display:none}
+.n{font-size:20px;color:var(--ac);font-weight:600}
+input,textarea,select{width:100%;background:var(--it);border:1px solid var(--ln);color:var(--in);border-radius:6px;padding:7px 9px;font:inherit;min-width:0}
+textarea{resize:vertical}
+input:focus,textarea:focus,select:focus,button:focus-visible{outline:2px solid var(--ac);outline-offset:1px}
+input[type=checkbox]{width:18px;height:18px;accent-color:var(--ac);padding:0}
+.attrs{display:grid;grid-template-columns:repeat(auto-fit,minmax(90px,1fr));gap:10px}
+.at{text-align:center;border:1px solid var(--ln);border-radius:10px;padding:8px 6px;background:var(--it)}
+.at b{display:block;color:var(--mu);letter-spacing:.14em;font-size:12px}
+.at .big{font-size:26px;text-align:center;color:var(--ac);font-weight:700;padding:4px;margin:4px 0;background:transparent;border:0;border-bottom:1px solid var(--ln);border-radius:0}
+.at .sc{width:54px;text-align:center;padding:3px;font-size:12px;color:var(--mu)}
+.bar{height:10px;border-radius:6px;background:var(--it);border:1px solid var(--ln);overflow:hidden;margin-bottom:10px}
+.bar i{display:block;height:100%;width:0;background:#3f9d5a;transition:width .2s}.bar.mp i{background:#3f7fd0}
+.stp{display:flex;gap:4px}.stp input{text-align:center}
+.stp button,.btn{border:1px solid var(--ln);background:var(--it);color:var(--ac);border-radius:6px;cursor:pointer;font:inherit}
+.stp button{width:34px;font-size:16px}.btn{padding:8px 12px;width:100%}
+.def{display:flex;gap:14px;align-items:center}
+.big2{font-size:44px;font-weight:700;color:var(--ac);border:2px solid var(--ln);border-radius:12px;padding:6px 14px;background:var(--it)}
+.dl{flex:1;display:grid;grid-template-columns:1fr 80px;gap:6px 10px;align-items:center;font-size:12px;color:var(--mu)}
+.dl b{color:var(--tx);text-align:right}.chk{display:flex;gap:8px;align-items:center}
+.hint{font-size:12px;color:var(--mu);margin:8px 0 0}.hint b{color:var(--ac)}
+.warn{color:var(--wr);font-size:12px;margin:6px 0 0}
+.skh,.sk{display:grid;grid-template-columns:24px minmax(110px,1.6fr) 46px 40px 74px 40px 62px;gap:8px;align-items:center}
+.skh{font-size:10px;color:var(--mu);letter-spacing:.08em;text-transform:uppercase;padding-bottom:4px}
+.sk{padding:4px 0;border-top:1px solid #2a1a19}
+.sk .nm{display:flex;gap:4px;align-items:center}.sk .nm i{color:var(--mu);font-style:normal}.sk .nm input{padding:3px 6px}
+.sk .tt{text-align:center;color:var(--ac);font-size:16px}.sk .h,.sk .tr{text-align:center;color:var(--mu)}
+.sk.off .tt{opacity:.35}
+.sk select{padding:4px}.sk input[type=number]{padding:4px 6px}
+.scroll{overflow-x:auto}
+.atk{display:grid;grid-template-columns:1.6fr 1fr 1fr .8fr 1fr 1fr;gap:6px;margin-bottom:6px;min-width:560px}
+.atk.ar{grid-template-columns:2fr 1fr 1fr;min-width:0}
+.atk.h{font-size:10px;color:var(--mu);letter-spacing:.08em;text-transform:uppercase;margin-bottom:2px}
+.eqg{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:6px 14px}
+.eq{display:grid;grid-template-columns:1fr 80px;gap:6px}
+.it{border:1px solid var(--ln);border-radius:8px;padding:10px;margin-bottom:10px;background:var(--it)}
+.it .top{display:flex;gap:8px;margin-bottom:8px}
+.it .x{border:1px solid var(--ln);background:var(--pn);color:var(--mu);border-radius:6px;cursor:pointer;padding:0 9px;white-space:nowrap}
+.it .g{display:grid;grid-template-columns:repeat(auto-fit,minmax(100px,1fr));gap:8px;margin-bottom:8px}
+.it .g label{font-size:11px;color:var(--mu);letter-spacing:.06em;text-transform:uppercase}.it .g input{margin-top:3px}
+.empty main,.empty nav,.empty #chips{display:none}
+#msg{display:none;padding:28px 20px;color:var(--mu);text-align:center}.empty #msg{display:block}
+</style></head>
+<body>
+<header><h1>Tormenta20</h1><span id="who"></span><span id="st"></span><div id="chips"></div><button id="close" hidden>Fechar</button></header>
+<div id="msg">Nenhum personagem selecionado. Clique em um token e abra a ficha pelo menu do token ou pelo ícone da extensão.</div>
+<nav id="tabs"></nav>
+<main id="main"></main>
+<script src="app.js"></script>
+</body></html>

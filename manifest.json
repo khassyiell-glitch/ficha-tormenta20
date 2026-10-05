@@ -1,0 +1,16 @@
+{
+  "name": "Ficha Tormenta20",
+  "version": "1.0.0",
+  "manifest_version": 1,
+  "description": "Ficha de personagem de Tormenta20 ligada aos tokens, com cálculos automáticos de perícias, defesa e carga.",
+  "author": "Adilson",
+  "icon": "/ficha-tormenta20/icon.svg",
+  "background_url": "/ficha-tormenta20/bg.html",
+  "action": {
+    "title": "Ficha Tormenta20",
+    "icon": "/ficha-tormenta20/icon.svg",
+    "popover": "/ficha-tormenta20/index.html",
+    "width": 820,
+    "height": 680
+  }
+}
