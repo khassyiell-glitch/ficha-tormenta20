@@ -65,6 +65,24 @@ input[type=checkbox]{width:18px;height:18px;accent-color:var(--ac);padding:0}
 .it .x{border:1px solid var(--ln);background:var(--pn);color:var(--mu);border-radius:6px;cursor:pointer;padding:0 9px;white-space:nowrap}
 .it .g{display:grid;grid-template-columns:repeat(auto-fit,minmax(100px,1fr));gap:8px;margin-bottom:8px}
 .it .g label{font-size:11px;color:var(--mu);letter-spacing:.06em;text-transform:uppercase}.it .g input{margin-top:3px}
+.sp{border:1px solid var(--ln);border-radius:8px;margin-bottom:8px;background:var(--it);overflow:hidden}
+.sp.open{border-color:var(--ac)}
+.sph{padding:9px 12px;cursor:pointer}.sph:hover{background:#1a1211}
+.spt{display:flex;align-items:center;gap:10px;margin-bottom:6px}.spt b{font-size:15px;color:var(--in)}.spt i{margin-left:auto;font-style:normal;color:var(--mu);font-size:11px}
+.chip{font-size:11px;color:var(--ac);border:1px solid var(--ln);border-radius:20px;padding:1px 8px}.chip:empty{display:none}
+.sps{display:grid;grid-template-columns:repeat(auto-fit,minmax(105px,1fr));gap:6px 12px}
+.sps span{min-width:0}.sps em{display:block;font-style:normal;font-size:10px;color:var(--mu);letter-spacing:.06em;text-transform:uppercase}.sps b{font-weight:500;font-size:12.5px;overflow-wrap:anywhere}
+.spb{padding:4px 12px 12px;border-top:1px solid var(--ln)}.spb .top{display:flex;gap:8px;margin:10px 0}
+.spb .x,#spform .x{border:1px solid var(--ln);background:var(--pn);color:var(--mu);border-radius:6px;cursor:pointer;padding:0 10px;white-space:nowrap}
+.spb .g,#spform .g{display:grid;grid-template-columns:repeat(auto-fit,minmax(110px,1fr));gap:8px;margin-bottom:8px}
+.spb .g label,#spform .g label{font-size:11px;color:var(--mu);letter-spacing:.06em;text-transform:uppercase}.spb .g input,#spform .g input{margin-top:3px}
+#spform{padding:12px;margin-top:10px}#spform[hidden],#spnew[hidden]{display:none}
+#spform .top{display:flex;gap:8px;margin-bottom:8px}
+.res{max-height:190px;overflow:auto;display:flex;flex-wrap:wrap;gap:6px;margin-bottom:8px}
+.res button{background:var(--pn);border:1px solid var(--ln);color:var(--in);border-radius:20px;padding:5px 11px;cursor:pointer;font:inherit;font-size:12.5px}
+.res button small{color:var(--mu);margin-left:6px}.res button:hover{border-color:var(--ac)}
+#splink a{color:var(--ac)}
+textarea.auto{resize:none;overflow:hidden;min-height:38px}
 .empty main,.empty nav,.empty #chips{display:none}
 #msg{display:none;padding:28px 20px;color:var(--mu);text-align:center}.empty #msg{display:block}
 </style></head>
@@ -73,5 +91,5 @@ input[type=checkbox]{width:18px;height:18px;accent-color:var(--ac);padding:0}
 <div id="msg">Nenhum personagem selecionado. Clique em um token e abra a ficha pelo menu do token ou pelo ícone da extensão.</div>
 <nav id="tabs"></nav>
 <main id="main"></main>
-<script src="app.js"></script>
+<script src="app.js?v=6"></script>
 </body></html>
